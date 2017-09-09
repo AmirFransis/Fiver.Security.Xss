@@ -1,0 +1,16 @@
+﻿@using System.Text.Encodings.Web
+
+<h3>HTML</h3>
+@Html.Raw("<p>I am <strong>HTML</strong></p>")
+@HtmlEncoder.Default.Encode("<p>I am <strong>HTML</strong></p>")
+<hr />
+
+<h3>URL</h3>
+@Html.Raw("https://tahirnaushad.com/2017/08/16/asp-net-core-problem-solution-series/") <br />
+@UrlEncoder.Default.Encode("https://tahirnaushad.com/2017/08/16/asp-net-core-problem-solution-series/")
+<hr />
+
+<h3>JavaScript</h3>
+@Html.Raw("<script>alert('oops');</script>")
+<em>There is a raw JS here, which just executed !</em> <br />
+@JavaScriptEncoder.Default.Encode("<script>alert('oops');</script>")

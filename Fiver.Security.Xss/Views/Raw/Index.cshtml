@@ -1,0 +1,29 @@
+﻿@model Fiver.Security.Xss.Models.MovieOutputModel
+
+<div>
+    <form method="post">
+        <input type="text" name="filter" id="filter" />
+        <input type="submit" value="Search" />
+    </form>
+</div>
+
+<div>
+    <hr />
+    Default: <b>@Model.Filter</b>
+    <br />
+    Raw (xss): <b>@Html.Raw(Model.Filter)</b>
+</div>
+
+<div>
+    <hr />
+    @if (Model.Movies.Count > 0)
+    {
+        <ul>
+            @foreach (var item in Model.Movies)
+            {
+                <li>@Html.Raw(item.Title)</li>
+            }
+        </ul>
+    }
+</div>
+
